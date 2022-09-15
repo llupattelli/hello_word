@@ -13,7 +13,7 @@ pipeline {
       steps {
         script {
           openshift.withCluster() {
-            openshift.newBuild("--name=hello", "--image-stream=redhat-openjdk18-openshift:latest", "--binary")
+            openshift.newBuild("--name=hello", "--image-stream=redhat-openjdk18-openshift:1.12-1.1661378017", "--binary")
           }
         }
       }
