@@ -21,7 +21,7 @@ pipeline {
       steps {
         script {
           openshift.withCluster() {
-            openshift.selector("hello").startBuild("--from-file=target/Hello-0.0.1-SNAPSHOT", "--wait")
+            openshift.selector("bc","hello").startBuild("--from-file=target/Hello-0.0.1-SNAPSHOT.jar", "--wait")
           }
         }
       }
