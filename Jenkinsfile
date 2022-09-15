@@ -9,19 +9,6 @@ pipeline {
       }
     }
     stage('Create Image Builder') {
- when {
-
-        expression {
-
-          openshift.withCluster() {
-
-            return !openshift.selector("hello").exists();
-
-          }
-
-        }
-
-      }
       steps {
         script {
           openshift.withCluster() {
